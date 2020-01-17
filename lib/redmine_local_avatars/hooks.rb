@@ -25,5 +25,10 @@ module RedmineLocalAvatars
 		# app/views/hooks/redmine_local_avatars/_view_my_account_contextual.rhtml
 		render_on :view_my_account_contextual,
 		           :partial => 'hooks/redmine_local_avatars/view_my_account_contextual'
+
+    def view_layouts_base_html_head(context)
+      tag = javascript_include_tag('fitie.js', :plugin => 'redmine_local_avatars')
+    end
+
   end
 end

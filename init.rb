@@ -23,6 +23,9 @@ Redmine::Plugin.register :redmine_local_avatars do
   author 'Andrew Chaika and Luca Pireddu'
   description 'This plugin lets users upload avatars directly into Redmine'
   version '1.0.5'
+
+  settings :default => {'localavatar_url' => ""}, :partial => 'my/setting'
+
 end
 
 receiver = Object.const_defined?('ActiveSupport::Reloader') ?  ActiveSupport::Reloader : ActionDispatch::Callbacks
