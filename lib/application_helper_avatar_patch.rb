@@ -37,7 +37,7 @@ module LocalAvatarsPlugin
 				else
 					# Use some image url if user has auth source
 					if user.auth_source_id then
-						image_url = Setting.plugin_redmine_local_avatars['localavatar_url'] % user.mail
+						image_url = Setting.plugin_redmine_local_avatars['localavatar_url'] % user.login
 						options[:size] = "64" unless options[:size]
 						return "<img class=\"gravatar\" width=\"#{options[:size]}\" height=\"#{options[:size]}\" src=\"#{image_url}\" style=\"object-fit: cover\"/>".html_safe
 					end
